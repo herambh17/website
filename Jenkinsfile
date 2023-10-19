@@ -21,7 +21,7 @@ pipeline{
             steps{
             script{
             bat 'docker login -u "herambhkumawat17" -p "Herkum@17" docker.io'
-            bat 'docker push herambh17/website'
+            bat 'docker push herambh17/website:latest'
             }
             }
         }
