@@ -5,15 +5,15 @@ pipeline{
             steps{
             checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/herambh17/website']])
             script{
-            bat 'docker rmi -f herambh17/website:latest'
-            bat 'docker rm -f herambh17/website:latest'
+            bat 'docker rmi -f herambhkumawat17/website:latest'
+            bat 'docker rm -f herambhkumawat17/website:latest'
             }
             }
         }
         stage('Build Docker image'){
             steps{
             script{
-            bat 'docker build -t herambh17/website .'
+            bat 'docker build -t herambhkumawat17/website .'
             }
             }
         }
@@ -21,14 +21,14 @@ pipeline{
             steps{
             script{
             bat 'docker login -u "herambhkumawat17" -p "Herkum@17" docker.io'
-            bat 'docker push herambh17/website:latest'
+            bat 'docker push herambhkumawat17/website:latest'
             }
             }
         }
         stage('Creating new Container'){
             steps{
                 script{
-                    bat 'docker run -it -d -P --name=cont_html herambh17/website'
+                    bat 'docker run -it -d -P --name=cont_html herambhkumawat17/website'
             }
         }
     }
