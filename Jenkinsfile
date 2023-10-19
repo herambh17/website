@@ -5,7 +5,7 @@ pipeline{
             steps{
             checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/herambh17/website']])
             script{
-            bat 'docker rmi -f herambh17/website:latest'
+            bat 'docker rmi -f herambh17/website'
             bat 'docker rm -f cont_html'
             }
             }
@@ -21,7 +21,7 @@ pipeline{
             steps{
             script{
             bat 'docker login -u "herambhkumawat17" -p "Herkum@17" docker.io'
-            bat 'docker push herambh17/website:latest'
+            bat 'docker push herambh17/website'
             }
             }
         }
