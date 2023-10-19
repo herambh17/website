@@ -20,7 +20,7 @@ pipeline{
         stage('Push image to Docker Hub'){
             steps{
             script{
-            bat 'docker login -u "herambhkumawat" -p "Herkum@17" docker.io'
+            bat 'docker login -u "herambhkumawat17" -p "Herkum@17" docker.io'
             bat 'docker push herambh17/website:latest'
             }
             }
